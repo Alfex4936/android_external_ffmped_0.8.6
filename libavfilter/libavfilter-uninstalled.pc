@@ -1,0 +1,12 @@
+prefix=
+exec_prefix=
+libdir=${pcfiledir}
+includedir=/home001/sungho2012.lee/dongjun.seo/test_opensrc/vendor/lge/apps/VoiceRecorder3
+
+Name: libavfilter
+Description: FFmpeg video filtering library
+Version: 2.23.0
+Requires: 
+Conflicts:
+Libs: ${libdir}/libavfilter.a -ldl -lasound -lSDL -lm -pthread -lz 
+Cflags: -I${includedir}

@@ -1,0 +1,42 @@
+-------
+VidClip
+-------
+
+VidClip is a video trimmer for Android platform. VidClip currently uses FFmpeg for trimming the video. 
+
+---------
+Copyright
+---------
+
+VidClip uses LGPLed code from FFmpeg project.
+FFmpeg is a free software licensed under the GNU Lesser General Public License (LGPL), version 2.1 or later.
+FFmpeg is a trademark of Fabrice Bellard, originator of the FFmpeg project.
+Original Source code for FFmpeg can be found on the FFmpeg web site (http://www.ffmpeg.org).
+This source package contains full copy of sourced code of FFmpeg, which is used by VidClip to create its ffmpeg.so.
+
+------------------------
+Modification and updates
+------------------------
+
+The following files were added to ffmpeg source code, so that Google Android NDK r7b can build it:
+
+ffmpeg/libavutil/avconfig.h
+ffmpeg/Android.mk
+ffmpeg/Android_Build_Common.mk
+ffmpeg/Android_Source_Files.mk
+ffmpeg/config.h
+ffmpeg/version.h
+ffmpeg/configure_android.sh
+
+Also some source files are modified with __LGE__ #define statement.
+You can search them to check what is added and updated.
+
+Please put the whole source structure into your NDK application (under jni directory) and refer this Android.mk as any NDK application.
+After that the following commands will build FFmpeg for Android:
+
+$ ndk-build
+
+Please see the configure_android.sh script that GPL'ed and Non Free code is removed from the build.
+
+This FFmpeg source code is configured to use OpenCORE libraries for AMR-NB decoding/encoding.
+
